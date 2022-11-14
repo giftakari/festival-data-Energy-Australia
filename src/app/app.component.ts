@@ -34,6 +34,14 @@ import { FestivalService } from './shared/festival.service';
  *
  */
 
+// End to end Testing .
+
+/*
+The end to end test is in the cypress folder => e2e folder => AppTest.cy.ts file
+minimal has been written as the project is a small project
+
+**/
+
 
 @Component({
   selector: 'app-root',
@@ -51,7 +59,7 @@ export class AppComponent implements OnInit {
   ngOnInit(): void {
     this.festival$ = this.festivalService.getFestivals().pipe(
       catchError((err) => {
-        this.error = `Cant get products ${err.status}`;
+        this.error = `Cant get festivals ${err.status}`;
         return EMPTY;
       })
     );
